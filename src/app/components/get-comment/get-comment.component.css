@@ -1,0 +1,158 @@
+.comments {
+
+    margin-top: 5%;
+
+    margin-left: 20px;
+
+}
+
+
+#commen {
+    margin-left: 300px;
+    margin-right: 300px;
+}
+
+
+.darker {
+
+    border: 1px solid #ecb21f;
+
+    background-color: whitesmoke;
+    /* background-color: #d0e2bc; */
+
+    /* float: right;  */
+
+    border-radius: 5px;
+
+    padding-left: 40px;
+
+    padding-right: 30px;
+
+    padding-top: 10px;
+
+    border-left: 6px solid #095484;
+    /* width: 40%; */
+    /* height: 100px; */
+    /* padding: 10px; */
+    align-items: center;
+
+
+}
+
+
+
+
+
+.comment {
+
+    border: 1px solid rgba(16, 46, 46, 1);
+
+    background-color: rgba(16, 46, 46, 0.973);
+
+    float: left;
+
+    border-radius: 5px;
+
+    padding-left: 40px;
+
+    padding-right: 30px;
+
+    padding-top: 10px;
+
+    max-width: 800px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+
+    display: inline;
+
+}
+
+
+
+.comment p,
+.comment span,
+.darker p,
+.darker span {
+
+    color: rgb(25, 8, 8);
+
+}
+
+
+
+h1,
+h4 {
+
+    color: rgb(19, 6, 6);
+
+    font-weight: bold;
+
+}
+
+label {
+
+    color: rgb(212, 208, 208);
+
+}
+
+
+/* 
+#align-form{ 
+
+    margin-top: 20px; 
+
+} 
+
+.form-group p a{ 
+
+    color: white; 
+
+} 
+
+ 
+
+#checkbx{ 
+
+    background-color: black; 
+
+} 
+
+ 
+
+#darker img{ 
+
+    margin-right: 15px; 
+
+    position: static; 
+
+}  */
+
+
+
+/* .form-group input,.form-group textarea{ 
+
+    background-color: rgb(231, 219, 219); 
+
+    border: 1px solid rgba(16, 46, 46, 1); 
+
+    border-radius: 12px; 
+
+}  */
+
+
+
+/* form{ 
+
+    border: 1px solid rgba(16, 46, 46, 1); 
+
+    background-color: rgba(16, 46, 46, 0.973); 
+
+    border-radius: 5px; 
+
+    padding: 20px; 
+
+ }  */

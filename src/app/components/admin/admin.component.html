@@ -1,0 +1,131 @@
+<h1>All Users</h1>
+<hr>
+<input type="text" [(ngModel)]="searchEmail" placeholder="Search by Email" />
+<br>
+<button class="btn btn-primary" (click)="search()">Search</button>
+
+<div class="alert alert-success" *ngIf="message">{{message}}</div>
+
+<div class="container">
+
+    <table class="table">
+
+        <thead>
+
+            <tr>
+
+                <th>
+
+                    Name
+
+                </th>
+
+                <th>
+
+                    Email ID
+
+                </th>
+
+                <th>
+
+                    Bio
+
+                </th>
+
+                <th>
+
+                    Delete
+
+                </th>
+
+            </tr>
+
+        </thead>
+
+        <tbody *ngFor="let searchedUsers of searchedUser">
+
+            <tr>
+
+
+
+                <td>
+
+                    {{searchedUsers.firstName}} {{searchedUsers.lastName}}
+
+                </td>
+
+                <td>
+
+                    {{searchedUsers.email}}
+
+                </td>
+
+                <td>
+
+                    {{searchedUsers.bio}}
+
+                </td>
+
+
+
+                <td>
+
+                    <button (click)="delete(searchedUsers.id)" class="btn btn-warning">Delete</button>
+
+                </td>
+
+
+
+            </tr>
+
+        </tbody>
+
+
+
+        <tbody *ngFor="let user of allUsers">
+
+            <tr *ngIf="visible">
+
+
+
+                <td>
+
+                    {{user.firstName}} {{user.lastName}}
+
+                </td>
+
+                <td>
+
+                    {{user.email}}
+
+                </td>
+
+                <td>
+
+                    {{user.bio}}
+
+                </td>
+
+
+
+                <td>
+
+                    <button (click)="delete(user.id)" class="btn btn-warning">Delete</button>
+
+                </td>
+
+
+
+            </tr>
+
+        </tbody>
+
+        <!-- <div>
+
+        <button (click)=addTodo() class="btn btn-success">Add</button>
+
+    </div> -->
+
+    </table>
+
+</div>

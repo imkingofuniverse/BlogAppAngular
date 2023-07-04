@@ -1,0 +1,114 @@
+<div class="card bg-light">
+  <div class="container py-5">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-8 col-12 pe-md-5 pe-0 d-none d-md-block">
+          <h1 class="display-5" style="color: #337ab7;">LET'S BLOG</h1>
+
+          <p class="lead"></p>
+
+          <hr />
+
+          <small style="color: #555;">
+            Discover a world of captivating stories, insightful articles, and
+            engaging discussions on our platform. Whether you're a seasoned
+            writer or a curious reader, our blog application provides a vibrant
+            community for sharing, exploring, and connecting with like-minded
+            individuals. Here, you can unleash your creativity, expand your
+            knowledge, and make meaningful connections through the power of
+            words.
+          </small>
+
+          <img
+            src="https://media.istockphoto.com/id/1371081916/photo/content-wording-on-wooden-cubes-with-speech-bubbles.webp?s=1024x1024&w=is&k=20&c=PSbUwjCe4aAGkKjdNFHnKa_GFU3xGmvB8NOXB9NA_-s="
+            alt="Image description" style="width: 100%; margin-top: 20px;">
+
+        </div>
+
+
+
+        <div class="col-md-4 col-12">
+          <form #signupForm="ngForm" (ngSubmit)="register()" class="row g-3">
+
+
+
+
+
+            <div class="col-md-6 col-12">
+              <label class="form-label">First name*</label>
+
+              <input type="text" class="form-control" [class.is-invalid]="first_name.touched && first_name.invalid"
+                required #first_name="ngModel" [(ngModel)]="registerForm.firstName" name="first_name" />
+
+              <small *ngIf="first_name.touched && first_name.invalid" class="text-danger">
+                Fill this field!
+              </small>
+              <small *ngIf="error" class="text-danger">
+                {{ error.error.firstName }}
+              </small>
+            </div>
+
+            <div class="col-md-6 col-12">
+              <label class="form-label">Last name*</label>
+
+              <input type="text" class="form-control" [class.is-invalid]="last_name.touched && last_name.invalid"
+                required #last_name="ngModel" [(ngModel)]="registerForm.lastName" name=" last_name" />
+
+              <small *ngIf="last_name.touched && last_name.invalid" class="text-danger">
+                Fill this field!
+              </small>
+              <small *ngIf="error" class="text-danger">
+                {{ error.error.lastName }}
+              </small>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Email address*</label>
+
+              <input type="email" class="form-control" [class.is-invalid]="email.touched && email.invalid" required
+                #email="ngModel" [(ngModel)]="registerForm.email" name="email" />
+
+              <small *ngIf="email.touched && email.invalid" class="text-danger">
+                Fill this field!
+              </small>
+              <small *ngIf="error" class="text-danger">
+                {{ error.error.email }}
+              </small>
+            </div>
+
+            <div class="col-12">
+              <label class="form-label">Password*</label>
+
+              <input type="password" class="form-control" [class.is-invalid]="password.touched && password.invalid"
+                required #password="ngModel" [(ngModel)]="registerForm.password" name="password" />
+
+              <small *ngIf="password.touched && password.invalid" class="text-danger">
+                Fill this field!
+              </small>
+
+              <small *ngIf="error" class="text-danger">
+                {{ error.error.password }}
+              </small>
+            </div>
+
+            <div class="d-grid gap-2">
+              <!-- <button class="btn btn-dark" type="submit" [disabled]="signupForm.invalid || signupData.loading">
+
+                            {{ signupData.loading ? 'Signing up...' : 'Signup for free' }}
+
+                        </button> -->
+
+              <!-- <button type="button" class="btn btn-success">signup</button> -->
+
+              <button type="submit" class="btn btn-primary" style="background-color: #337ab7;">Signup</button>
+
+              <a class="btn btn-sm btn-light" routerLink="/signin" style="color: #555;">
+                Already have an account? Login
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

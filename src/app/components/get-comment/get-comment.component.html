@@ -1,0 +1,209 @@
+<!-- <p>get-comment works!</p> -->
+
+<div style="min-height: 78vh;">
+    <!-- <h2>List of Comments</h2> -->
+    <!-- <table class="table table-striped">
+        <thead>
+
+            <tr>
+                <th> Id</th>
+                <th> Name</th>
+                <th> Email</th>
+                <th> Content/th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            <tr *ngFor="let comment of comments">
+                <td> {{ comment.id }} </td>
+                <td> {{ comment.name }} </td>
+                <td> {{ comment.email }} </td>
+                <td> {{ comment.content }} </td>
+                <!-- <td>
+                    <button (click)="updatePost(post.id)" class="btn btn-info">Update</button>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+
+                    <button (click)="deletePost(post.id)" class="btn btn-danger"
+                        style="margin-left: 10px">
+                        Delete</button>
+                </td> 
+
+            </tr>
+        </tbody>
+    </table> -->
+
+    <!-- <div>
+    <mat-card>
+        <mat-card-title>Title</mat-card-title>
+        <mat-card-subtitle>	Card subtitle</mat-card-subtitle>
+        <mat-card-content>	Primary card content. Intended for blocks of text</mat-card-content>
+        <img mat-card-image>	Card image. Stretches the image to the container width
+        <mat-card-actions align="end">	<button>One</button> <button>One</button></mat-card-actions>
+        <mat-card-footer>	Section anchored to the bottom of the card</mat-card-footer>
+    </mat-card>
+    </div> -->
+
+    <!--Comment--------------------------------------------------------------->
+
+    <div class="align" id="comm">
+
+        <h1>Comments</h1>
+
+        <!-- <div class="comment mt-4 text-justify float-left"> 
+
+            <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40"> 
+
+            <h4>Jhon Doe</h4> 
+
+            <span>- 20 October, 2018</span> 
+
+            <br> 
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> 
+
+        </div> 
+
+        <div class="text-justify darker mt-4 float-right"> 
+
+            <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40"> 
+
+            <h4>Rob Simpson</h4> 
+
+            <span>- 20 October, 2018</span> 
+
+            <br> 
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> 
+
+        </div> 
+
+        <div class="comment mt-4 text-justify"> 
+
+            <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40"> 
+
+            <h4>Jhon Doe</h4> 
+
+            <span>- 20 October, 2018</span> 
+
+            <br> 
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> 
+
+        </div>  -->
+
+        <!-- <div class="darker mt-4 text-justify " id="commen"> 
+
+            <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40"> 
+            <span>&nbsp;&nbsp;&nbsp;</span>
+
+            <h4>Rob Simpson</h4> 
+
+            <span>&nbsp;- 20 October, 2018</span> 
+
+            <br> 
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p> 
+
+        </div>  -->
+
+    </div>
+
+    <div class="darker mt-4 text-justify " id="commen">
+
+        <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
+        <span>&nbsp;&nbsp;&nbsp;</span>
+
+        <h4>BlogApp Team</h4>
+
+        <span>&nbsp;- team@blogapp.com</span>
+
+        <br>
+
+        <p>Thank you for an awesome post on Blog App!!. Make App better with your posts and interactions. Publish your
+            passions, your way. Create a unique and beautiful content with our app.</p>
+
+    </div>
+
+    <div class="darker mt-4 text-justify " id="commen" *ngFor="let comment of comments">
+
+        <img src="https://i.imgur.com/CFpa3nK.jpg" alt="" class="rounded-circle" width="40" height="40">
+        <span>&nbsp;&nbsp;&nbsp;</span>
+
+        <h4>{{ comment.name }}</h4>
+
+        <span>&nbsp;- {{ comment.email }}</span>
+
+        <br>
+
+        <p>{{ comment.content }}</p>
+        <td>
+            <button *ngIf="adminService.isUserAdmin()" (click)="updateComment(comment.id)" class="btn btn-info btn-sm">Update<i
+                    class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+
+            <button *ngIf="adminService.isUserAdmin()" (click)="deleteComment(comment.id)" class="btn btn-danger btn-sm" style="margin-left: 10px">
+                Delete<i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+    </div>
+
+
+    <!-- <div class="col-lg-4 col-md-5 col-sm-4 offset-md-1 offset-sm-1 col-12 mt-4">
+
+        <form id="algin-form"> 
+
+            <div class="form-group"> 
+
+                <h4>Leave a comment</h4> 
+
+                <label for="message">Message</label> 
+
+                <textarea name="msg" id=""msg cols="30" rows="5" class="form-control" style="background-color: black;"></textarea> 
+
+            </div> 
+
+            <div class="form-group"> 
+
+                <label for="name">Name</label> 
+
+                <input type="text" name="name" id="fullname" class="form-control"> 
+
+            </div> 
+
+            <div class="form-group"> 
+
+                <label for="email">Email</label> 
+
+                <input type="text" name="email" id="email" class="form-control"> 
+
+            </div> 
+
+            <div class="form-group"> 
+
+                <p class="text-secondary">If you have a <a href="#" class="alert-link">gravatar account</a> your address will be used to display your profile picture.</p> 
+
+            </div> 
+
+            <div class="form-inline"> 
+
+                <input type="checkbox" name="check" id="checkbx" class="mr-1"> 
+
+                <label for="subscribe">Subscribe me to the newlettter</label> 
+
+            </div> 
+
+            <div class="form-group"> 
+
+                <button type="button" id="post" class="btn">Post Comment</button> 
+
+            </div> 
+
+        </form> 
+
+    </div>  -->
+
+    <!--Comment--------------------------------------------------------------->
+
+
+
+</div>

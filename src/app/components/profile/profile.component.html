@@ -1,0 +1,27 @@
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+  <div class="card p-4">
+    <div class="image d-flex flex-column justify-content-center align-items-center">
+      <div class="image-container">
+        <input type="file" #imageInput style="display: none" (change)="handleImageUpload($event)">
+        <button class="btn btn-secondary" (click)="openImageUploader()">
+          <img *ngIf="!selectedImage"
+            src="https://cdn0.iconfinder.com/data/icons/robot-avatar/512/Robot_Avatars_19-256.png" height="100"
+            width="100" />
+          <img *ngIf="selectedImage" [src]="selectedImage" height="100" width="100" />
+        </button>
+      </div>
+      <span class="name mt-3">{{ profileDetails.firstName }} {{ profileDetails.lastName }}</span>
+      <span class="idd">{{ profileDetails.email }}</span>
+      
+      <span class="name mt-3">{{ profileDetails.bio }}</span>
+      <div >
+        <button (click)="updateProfile(profileDetails.id)" class="btn1 btn-dark">Edit Profile</button>
+        <div class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center">
+          <span><i class="fa fa-twitter"></i></span>
+          <span><i class="fa fa-facebook-f"></i></span>
+          <span><i class="fa fa-instagram"></i></span>
+          <span><i class="fa fa-linkedin"></i></span>
+        </div>
+      </div>
+    </div>
+  </div>

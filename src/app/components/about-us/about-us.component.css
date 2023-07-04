@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Josefn Sans', sans-serif;
+    box-sizing: border-box;
+}
+.about{
+    width: 100%;
+    padding: 78px 0px;
+    background-color: aliceblue;
+}
+.about-text{
+    width: 550px
+}
+.main{
+    width: 1130px;
+    max-width: 95%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 20px 5px 30px 5px rgba(108, 124, 125, 0.3);
+}
+.about-text h1{
+    color: black;
+    font: larger;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.about-text h4{
+    color: black;
+    font-weight: 550;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.about-text h5{
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.about-text p{
+    color: black;
+    letter-spacing: 1px;
+    line-height: normal;
+    font-size: medium;
+    margin-bottom: 40px;
+}

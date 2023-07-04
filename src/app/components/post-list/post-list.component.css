@@ -1,0 +1,38 @@
+/* Fake image */
+.fakeimg {
+    /* background-color: #aaa; */
+    width: 100%;
+    padding: 20px;
+    /* float: right; */
+    align-items: center;
+    margin-left: 7pc;
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #c5ecf0;
+  }
+
+  .content {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .content h2 { 
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .content p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }

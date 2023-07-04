@@ -1,0 +1,9 @@
+.ng-invalid:not(form).ng-touched {
+    border: 1px solid red;
+}
+
+#content
+{
+    height:300px;
+    font-size:14pt;
+}

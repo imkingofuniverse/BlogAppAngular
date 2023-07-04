@@ -1,0 +1,73 @@
+<p>update-post works!</p>
+
+<div class="col-md-6 offset-md-3">
+    <h1> Create Blog </h1>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate
+        style="display: flex; flex-direction: column; border: 1px solid; border-radius: 8px; padding: 10px; box-shadow: 2px 2px 5px 2px grey;">
+
+        <div class="form-group">
+            <label> Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="post.title" name="title"
+                required #titleField="ngModel">
+            <div [hidden]="titleField.valid || titleField.untouched" class="alert alert-danger">
+                Enter Title
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Image URL </label>
+            <input type="text" class="form-control" id="imageName" [(ngModel)]="post.image" name="imageName"
+                required #imageField="ngModel">
+            <div [hidden]="imageField.valid || imageField.untouched" class="alert alert-danger">
+                Enter Image URL
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label> Content</label>
+            <input type="text" class="form-control" id="content" [(ngModel)]="post.content"
+                name="content" required #contentField="ngModel">
+            <div [hidden]="contentField.valid || contentField.untouched" class="alert alert-danger">
+                Content Required
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label> Content</label>
+            <textarea class="form-control" id="content" [(ngModel)]="post.content"
+            name="content" required #contentField="ngModel" rows="4" cols="50">Type here...</textarea>
+            <div [hidden]="contentField.valid || contentField.untouched" class="alert alert-danger">
+            Content Required
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label> Category</label>
+            <input type="text" class="form-control" id="category" [(ngModel)]="post.category" name="category"
+                required #category="ngModel">
+            <div [hidden]="category.valid || category.untouched" class="alert alert-danger">
+                Category Required
+            </div>
+        </div> -->
+        
+        <div class="form-group">
+        <label for="Category">Choose a category:</label>
+        <select class="form-control" id="category" [(ngModel)]="post.category" name="category" required #category="ngModel">
+            <option value="Personal Blog">Personal Blog</option>
+            <option value="Food Blog">Food Blog</option>
+            <option value="Travel Blog">Travel Blog</option>
+            <option value="Lifestyle Blog">Lifestyle Blog</option>
+            <option value="Photography Blog">Photography Blog</option>
+        </select>
+        <div [hidden]="category.valid || category.untouched" class="alert alert-danger">
+            Category Required
+        </div>
+        </div>
+        
+
+
+
+        <button class="btn btn-success" type="submit" style="margin-top:8px;">Submit</button>
+
+    </form>
+</div>

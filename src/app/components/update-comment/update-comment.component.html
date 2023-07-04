@@ -1,0 +1,43 @@
+<p>update-comment works!</p>
+
+<div class="col-md-6 offset-md-3">
+    <h1> Update Comment </h1>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate
+        style="display: flex; flex-direction: column; border: 1px solid; border-radius: 8px; padding: 10px; box-shadow: 2px 2px 5px 2px grey;">
+
+        <div class="form-group">
+            <label> Name</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="comment.name" name="title"
+                required #titleField="ngModel">
+            <div [hidden]="titleField.valid || titleField.untouched" class="alert alert-danger">
+                Enter Name
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label> Email </label>
+            <input type="text" class="form-control" id="imageName" [(ngModel)]="comment.email" name="imageName"
+                required #imageField="ngModel">
+            <div [hidden]="imageField.valid || imageField.untouched" class="alert alert-danger">
+                Enter Image URL
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label> Content</label>
+            <textarea class="form-control" id="content" [(ngModel)]="comment.content"
+            name="content" required #contentField="ngModel" rows="4" cols="50">Type here...</textarea>
+            <div [hidden]="contentField.valid || contentField.untouched" class="alert alert-danger">
+            Content Required
+            </div>
+        </div>
+    
+        
+
+
+
+        <button class="btn btn-success" type="submit" style="margin-top:8px;">Submit</button>
+
+    </form>
+</div>

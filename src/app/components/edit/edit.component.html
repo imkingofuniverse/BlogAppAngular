@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="border p-4 bg-light">
+    <h2 class="text-center mb-4">Editing Profile</h2>
+    <form (ngSubmit)="saveDetails()" class="needs-validation">
+      <div class="mb-3">
+        <label for="first_name" class="form-label">First Name*</label>
+        <input type="text" class="form-control form-control-sm" id="first_name" required
+          [(ngModel)]="userDetails.firstName" name="first_name" #first_name="ngModel">
+          <small *ngIf="error" class="text-danger">
+            {{ error.error.firstName}}
+          </small>
+        </div>
+      
+      <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name*</label>
+        <input type="text" class="form-control form-control-sm" id="last_name" required
+          [(ngModel)]="userDetails.lastName" name="last_name" #last_name="ngModel">
+          <small *ngIf="error" class="text-danger">
+            {{ error.error.lastName}}
+          </small>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address*</label>
+        <input type="email" class="form-control form-control-sm" id="email" required
+          [(ngModel)]="userDetails.email" name="email" #email="ngModel">
+          <small *ngIf="error" class="text-danger">
+            {{ error.error.email}}
+          </small>
+      </div>
+
+      <div class="mb-3">
+        <label for="bio" class="form-label">Bio*</label>
+        <textarea class="form-control form-control-sm" id="bio" required
+          [(ngModel)]="userDetails.bio" name="bio" #bio="ngModel"></textarea>
+          <small *ngIf="error" class="text-danger">
+            {{ error.error.bio}}
+          </small>
+      </div>
+
+      <div class="d-grid">
+        <button class="btn btn-primary btn-sm" type="submit">Save</button>
+      </div>
+    </form>
+  </div>
+</div>

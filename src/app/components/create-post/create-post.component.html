@@ -1,0 +1,121 @@
+<div class="col-md-6 offset-md-3">
+    <h2> Write Your Own Blog </h2>
+    <form (ngSubmit)="onSubmit()" ngNativeValidate
+        style="display: flex; flex-direction: column; border: 1px solid; border-radius: 8px; padding: 10px; box-shadow: 2px 2px 5px 2px grey;">
+        <div class="form-group">
+            <label> Title</label>
+            <input type="text" class="form-control" id="title" [(ngModel)]="post.title" name="title" required
+                #titleField="ngModel">
+            <div [hidden]="titleField.valid || titleField.untouched" class="alert alert-danger">
+                Enter Title
+            </div>
+            <small *ngIf="error" class="text-danger">{{error.error.title}}</small>
+        </div>
+
+        <div class="form-group">
+            <label> Image URL </label>
+            <input type="text" class="form-control" id="imageName" [(ngModel)]="post.image" name="imageName" required
+                #imageField="ngModel">
+            <div [hidden]="imageField.valid || imageField.untouched" class="alert alert-danger">
+                Enter Image URL
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label> Content</label>
+            <input type="text" class="form-control" id="content" [(ngModel)]="post.content"
+                name="content" required #contentField="ngModel">
+            <div [hidden]="contentField.valid || contentField.untouched" class="alert alert-danger">
+                Content Required
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label> Content</label>
+            <textarea class="form-control" id="content" [(ngModel)]="post.content" name="content" required
+                #contentField="ngModel" rows="4" cols="50">Type here...</textarea>
+            <div [hidden]="contentField.valid || contentField.untouched" class="alert alert-danger">
+                Content Required
+            </div>
+            <small *ngIf="error" class="text-danger">{{error.error.content}}</small>
+        </div>
+
+        <!-- <div class="form-group">
+            <label> Category</label>
+            <input type="text" class="form-control" id="category" [(ngModel)]="post.category" name="category"
+                required #category="ngModel">
+            <div [hidden]="category.valid || category.untouched" class="alert alert-danger">
+                Category Required
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="Category">Choose a category:</label>
+            <select class="form-control" id="category" [(ngModel)]="post.category" name="category" required
+                #category="ngModel">
+                <option value="Personal Blog">Personal Blog</option>
+                <option value="Food Blog">Food Blog</option>
+                <option value="Travel Blog">Travel Blog</option>
+                <option value="Lifestyle Blog">Lifestyle Blog</option>
+                <option value="Photography Blog">Photography Blog</option>
+            </select>
+            <div [hidden]="category.valid || category.untouched" class="alert alert-danger">
+                Category Required
+            </div>
+            <small *ngIf="error" class="text-danger">{{error.error.category}}</small>
+        </div>
+
+
+
+
+        <button class="btn btn-success" type="submit" style="margin-top:8px;">Submit</button>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form class="mb-5" id="newPostForm" >
+    <h2 class="text-white mb-4">Post Content</h2>
+    <div class="form-group">
+        <input class="form-control py-4" id="headingInput" data-cy="headingInput" type="text" placeholder="Post heading" formControlName="heading" />
+        
+    </div>
+    <div class="form-group">
+        <input class="form-control py-4" id="subHeadingInput" data-cy="subHeadingInput" type="text" placeholder="Post subheading" formControlName="subHeading"  />
+    </div>
+    <div class="form-group">
+        <input class="form-control py-4" id="backgroundImageInput" data-cy="backgroundImageInput" type="text" placeholder="Post background image (enter a URL)" formControlName="backgroundImage" />
+        <div class="form-text text-white-50">Use an image URL (ex. https://source.unsplash.com/WLUHO9A_xik/1600x900)</div>
+       
+    </div>
+    <div class="form-group">
+        <textarea class="form-control py-3" id="bodyInput" autosize data-cy="bodyInput" placeholder="Post body text (markdown supported)" formControlName="body"></textarea>
+    </div>
+    <div class="form-group d-flex align-items-center justify-content-between"><button class="btn btn-primary" >Update Post</button></div>
+</form> -->

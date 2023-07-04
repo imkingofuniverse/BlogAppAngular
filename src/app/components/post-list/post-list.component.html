@@ -1,0 +1,28 @@
+<div class="card" *ngFor="let post of posts">
+    <div class="content">
+        <h2>{{ post.title }} </h2>
+        <!-- <div class="fakeimg" style="height:200px;">{{ post.image }}</div> -->
+        <div class="fakeimg">
+            <img style="border-radius: 5px; height: 300px;" sizes="100px" mat-card-image src="{{post.image}}"
+                alt="Blog Photo">
+        </div>
+        <p>{{ post.category }}</p>
+        <p>{{ post.content }}</p>
+        <td>
+            <button (click)="viewComment(post.id)" class="btn btn-info btn-sm">View Comments<i class="fa fa-eye"
+                    aria-hidden="true"></i></button>
+        </td>
+        <td>
+            <button (click)="createComment(post.id)" class="btn btn-info btn-sm">Write a Comment <i
+                    class="fa fa-solid fa fa-comment fa fa-beat-fade" style="color: #000000;"></i></button>
+        </td>
+        <td>
+            <button *ngIf="adminService.isUserAdmin()" (click)="updatePost(post.id)" class="btn btn-info btn-sm" style="margin-left:285px;">Update
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+
+
+            <button *ngIf="adminService.isUserAdmin()" (click)="deletePost(post.id)" class="btn btn-danger btn-sm"
+                style="margin-left: 1px">
+                Delete<i class="fa fa-trash" aria-hidden="true"></i></button>
+        </td>
+    </div>
