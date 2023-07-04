@@ -1,3 +1,4 @@
+# BlogApplication
 
 ![Screenshot (48)](https://github.com/imkingofuniverse/BlogAppAngular/assets/63497314/87ccab92-20d9-47a6-8e0b-2d79def31da0)
 
@@ -20,7 +21,6 @@
 
 
 
-# BlogApplication
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
